@@ -2,19 +2,22 @@ import express from 'express';
 import multer from 'multer';
 import csv from 'csv-parser';
 import fs from 'fs';
-import path from 'path';
 import cors from 'cors';
-import { fileURLToPath } from 'url';
 import admin from 'firebase-admin';
 import nodemailer from 'nodemailer';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 // Initialize Firebase Admin
+// Initialize Firebase Admin using ENV variable
+
 const serviceAccount = JSON.parse(
-  fs.readFileSync(path.join(__dirname, 'serviceAccountKey.json'), 'utf8')
+  process.env.FIREBASE_SERVICE_ACCOUNT
 );
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
+
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
