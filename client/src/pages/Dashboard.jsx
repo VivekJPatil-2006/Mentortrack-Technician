@@ -17,9 +17,9 @@ function Dashboard() {
 
   const user = {
     name: 'Vivek Patil',
-    email: 'vivekjpatil006@gmail.com',
+    email: 'technician@gmail.com',
     department: 'Computer Science',
-    password: 'vivek$12',
+    password: 'technician123',
   };
 
   const handleLogout = () => {
