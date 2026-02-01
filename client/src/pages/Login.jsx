@@ -10,7 +10,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    if (email === 'vivekjpatil006@gmail.com' && password === 'vivek$12') {
+    if (email === 'technician@gmail.com' && password === 'technician123') {
       navigate('/dashboard');
     } else {
       setError('Invalid credentials');
